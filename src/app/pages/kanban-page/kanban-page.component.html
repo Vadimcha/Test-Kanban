@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <h2>Hello {{ username }}, this is your kanban</h2>
+  <div class="grid">
+    <div class="column">
+      <h2 class="column__title">Todo</h2>
+      @if(toDoCardsData.length) {
+        @for(card of toDoCardsData; track card.id) {
+          <todo-card [data]="card" />
+        }
+      } @else {
+        <p>There is no task here</p>
+      }
+    </div>
+    <div class="column">
+      <h2 class="column__title">In Progress</h2>
+      @if(inProgressCardsData.length) {
+        @for(card of inProgressCardsData; track card.id) {
+          <todo-card [data]="card" />
+        }
+      } @else {
+        <p>There is no task here</p>
+      }
+    </div>
+    <div class="column">
+      <h2 class="column__title">Done</h2>
+      @if(doneCardsData.length) {
+        @for(card of doneCardsData; track card.id) {
+          <todo-card [data]="card" />
+        }
+      } @else {
+        <p>There is no task here</p>
+      }
+    </div>
+  </div>
+</div>
