@@ -1,6 +1,13 @@
-
-
+@import "primeicons/primeicons.css";
+@import 'reset.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --green-color: #00dc05;
+  --yellow-color: #ffac00;
+  --blue-color: #005aff;
+  --red-color: #ff0000;
+}
 

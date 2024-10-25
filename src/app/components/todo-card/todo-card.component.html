@@ -1,9 +1,28 @@
 <mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>{{ data.title }}</mat-card-title>
-    <mat-card-subtitle>{{ data.description }}</mat-card-subtitle>
+
+  <mat-card-header class="header">
+    <mat-card-title class="card__title">{{ data.title }}</mat-card-title>
+    <button mat-icon-button aria-label="Delete" (click)="deleteCard()">
+      <mat-icon fontIcon="delete"/>
+    </button>
   </mat-card-header>
-  <mat-card-actions>
+
+
+  <mat-card-content>
+    <mat-card-subtitle class="card__description">{{ data.description }}</mat-card-subtitle>
+  </mat-card-content>
+  <mat-card-actions class="footer">
     <button mat-flat-button (click)="openDescription()">More info</button>
+    <div class="info">
+      <p class="info__field">
+        Creator:
+        <strong>{{ data.creator }}</strong>
+      </p>
+      <p class="info__field">
+        Deadline:
+        <strong>{{ data.date_deadline | date }}</strong>
+      </p>
+    </div>
   </mat-card-actions>
+
 </mat-card>

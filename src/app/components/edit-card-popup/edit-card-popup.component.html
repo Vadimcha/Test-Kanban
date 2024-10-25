@@ -1,0 +1,40 @@
+<div mat-dialog-title class="dialog_title_block">
+  <div class="header">
+    <h3 class="header__title">Edit task</h3>
+  </div>
+</div>
+<mat-dialog-content class="content">
+  <form [formGroup]="form">
+    <mat-form-field class="field">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Type name" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Type description to task" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Deadline</mat-label>
+      <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="date_deadline">
+      <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="field">
+      <label for="select_group">Status</label>
+      <mat-radio-group aria-label="Select status" id="select_group" class="radio_group" formControlName="status">
+        <mat-radio-button value="To Do">To Do</mat-radio-button>
+        <mat-radio-button value="In Progress">In Progress</mat-radio-button>
+        <mat-radio-button value="Done">Done</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</mat-dialog-content >
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-flat-button aria-label="Save" (click)="onSave()">
+    Save
+  </button>
+</mat-dialog-actions>

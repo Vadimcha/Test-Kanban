@@ -28,6 +28,7 @@
 .field {
   display: flex;
   gap: 2px;
+  font-size: .9rem;
   flex-direction: column;
 
   &__title {
@@ -36,5 +37,13 @@
     color: #1f1f1f;
     font-size: .9rem;
     font-weight: 700;
+  }
+}
+
+.radio_group > mat-radio-button {
+  font-size: .9rem;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
   }
 }

@@ -1,5 +1,40 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
+@if (this.edit_mod) {
+  <div mat-dialog-title class="dialog_title_block">
+    <div class="header">
+      <h3 class="header__title">{{data.title}}</h3>
+      <button mat-icon-button aria-label="Edit" (click)="toggleEdit()">
+        <mat-icon fontIcon="edit"/>
+      </button>
+    </div>
+    <p class="deadline">
+      Deadline:
+      <span style="color: var(--red-color); font-weight: 600">
+      {{ data.date_deadline | date }}
+    </span>
+    </p>
+  </div>
+  <mat-dialog-content class="content">
+    <div class="field">
+      <p class="field__title">Status:</p>
+      <p class="status">{{ data.status }}</p>
+    </div>
+    <div class="field">
+      <p class="field__title">Description:</p>
+      <p class="description">{{ data.description }}</p>
+    </div>
+    <div class="field">
+      <p class="field__title">Creator:</p>
+      <p class="creator">{{ data.creator }}</p>
+    </div>
+    <div class="field">
+      <p class="field__title">Date creation:</p>
+      <p class="creator">{{ data.date_creation | date }}</p>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+}
+@else {
+  <edit-card-popup [data]="data" />
+}
