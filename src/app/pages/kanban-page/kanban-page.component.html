@@ -1,14 +1,16 @@
 <div class="wrapper">
-  <h2>Hello {{ username }}, this is your kanban</h2>
+  <div class="header">
+    <h2>Hello {{ username }}, this is your kanban</h2>
+    <button mat-flat-button (click)="openMakeTaskPopup()">Add new task</button>
+  </div>
   <div class="grid">
-    <!-- Колонка Todo -->
     <div class="column">
       <h2 class="column__title" style="color: var(--blue-color);">Todo</h2>
       <ng-container *ngIf="toDoCardsData$ | async as toDoCards; else noTodoTasks">
         <ng-container *ngIf="toDoCards.length > 0; else noTodoTasks">
-          <div *ngFor="let card of toDoCards; trackBy: trackByCardId">
+          <ng-container *ngFor="let card of toDoCards; trackBy: trackByCardId">
             <todo-card [data]="card"></todo-card>
-          </div>
+          </ng-container>
         </ng-container>
       </ng-container>
       <ng-template #noTodoTasks>
@@ -16,7 +18,6 @@
       </ng-template>
     </div>
 
-    <!-- Колонка In Progress -->
     <div class="column">
       <h2 class="column__title" style="color: var(--yellow-color);">In Progress</h2>
       <ng-container *ngIf="inProgressCardsData$ | async as inProgressCards; else noInProgressTasks">
@@ -31,7 +32,6 @@
       </ng-template>
     </div>
 
-    <!-- Колонка Done -->
     <div class="column">
       <h2 class="column__title" style="color: var(--green-color);">Done</h2>
       <ng-container *ngIf="doneCardsData$ | async as doneCards; else noDoneTasks">

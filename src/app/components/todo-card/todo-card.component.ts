@@ -23,8 +23,8 @@ export class TodoCardComponent {
   openDescription() {
     this.dialog.open(CardDescriptionPopupComponent,
       {
-      data: this.data,
-    }
+        data: this.data,
+      }
     );
   }
   deleteCard() {

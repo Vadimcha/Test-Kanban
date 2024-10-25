@@ -10,8 +10,8 @@ export class TodoCardsDataService {
   private todoCardsSubject = new BehaviorSubject<ITodoCard[]>([
     {
       id: '0',
-      title: "Make test task",
-      description: "You should create kanban desk using Angular",
+      title: "Make",
+      description: "You sho",
       status: CardStatus.ToDo,
       creator: "Obelyashevsky Michail",
       worker: "Belov Vadim",
@@ -54,5 +54,9 @@ export class TodoCardsDataService {
       card.id !== id
     )
     this.todoCardsSubject.next(updatedCards)
+  }
+
+  addCard(card: ITodoCard): void {
+    this.todoCardsSubject.next([...this.todoCardsSubject.value, card])
   }
 }

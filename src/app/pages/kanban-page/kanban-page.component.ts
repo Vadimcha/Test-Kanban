@@ -6,20 +6,21 @@ import { TodoCardComponent } from '../../components/todo-card/todo-card.componen
 import {AsyncPipe, CommonModule} from '@angular/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {MatButton} from '@angular/material/button';
+import {MatDialog} from '@angular/material/dialog';
+import {CardDescriptionPopupComponent} from '../../components/card-description-popup/card-description-popup.component';
+import {MakeTaskPopupComponent} from '../../components/make-task-popup/make-task-popup.component';
 
 @Component({
   selector: 'app-kanban-page',
   standalone: true,
-  imports: [TodoCardComponent, AsyncPipe, CommonModule],
+  imports: [TodoCardComponent, AsyncPipe, CommonModule, MatButton],
   templateUrl: './kanban-page.component.html',
   styleUrls: ['./kanban-page.component.scss']
 })
 export class KanbanPageComponent {
   username: string = localStorage.getItem("username") || "default";
-
-  trackByCardId(index: number, card: ITodoCard): string {
-    return card.id;
-  }
+  readonly dialog = inject(MatDialog);
 
   todoCardsDataService = inject(TodoCardsDataService);
   toDoCardsData$: Observable<ITodoCard[]> = this.todoCardsDataService.todoCards$.pipe(
@@ -31,4 +32,12 @@ export class KanbanPageComponent {
   doneCardsData$: Observable<ITodoCard[]> = this.todoCardsDataService.todoCards$.pipe(
     map(cards => cards.filter(card => card.status === CardStatus.Done))
   );
+
+  trackByCardId(index: number, card: ITodoCard): string {
+    return card.id;
+  }
+
+  openMakeTaskPopup() {
+    this.dialog.open(MakeTaskPopupComponent);
+  }
 }
