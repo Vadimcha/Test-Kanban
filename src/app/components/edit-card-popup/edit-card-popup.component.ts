@@ -59,7 +59,7 @@ export class EditCardPopupComponent {
       "title": new FormControl<string>(this.data.title),
       "description": new FormControl<string>(this.data.description),
       "date_deadline": new FormControl<Date>(this.data.date_deadline),
-      "status": new FormControl<CardStatus>(this.data.status),
+      // "status": new FormControl<CardStatus>(this.data.status),
     });
   }
 

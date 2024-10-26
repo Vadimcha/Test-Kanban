@@ -51,7 +51,7 @@ export class MakeTaskPopupComponent {
       "title": new FormControl<string>(""),
       "description": new FormControl<string>(""),
       "date_deadline": new FormControl<Date>(new Date),
-      "status": new FormControl<CardStatus>(CardStatus.ToDo),
+      // "status": new FormControl<CardStatus>(CardStatus.ToDo),
     });
   }
 
@@ -59,6 +59,7 @@ export class MakeTaskPopupComponent {
     if (this.form.valid) {
       const newCard: ITodoCard = {
         ...this.form.value,
+        status: "To Do",
         date_creation: new Date,
         creator: localStorage.getItem('username')
       };

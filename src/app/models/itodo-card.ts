@@ -9,4 +9,5 @@ export interface ITodoCard {
   worker: string,
   date_creation: Date,
   date_deadline: Date,
+  date_completion: Date,
 }

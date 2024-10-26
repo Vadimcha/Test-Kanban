@@ -14,14 +14,31 @@
   <mat-card-actions class="footer">
     <button mat-flat-button (click)="openDescription()">More info</button>
     <div class="info">
-      <p class="info__field">
-        Creator:
-        <strong>{{ data.creator }}</strong>
-      </p>
-      <p class="info__field">
-        Deadline:
-        <strong>{{ data.date_deadline | date }}</strong>
-      </p>
+      <ng-container *ngIf="data.status !== CardStatus.ToDo; else creator">
+        <p class="info__field">
+          Worker:
+          <strong>{{ data.worker }}</strong>
+        </p>
+      </ng-container>
+      <ng-template #creator>
+        <p class="info__field">
+          Creator:
+          <strong>{{ data.creator }}</strong>
+        </p>
+      </ng-template>
+      <ng-container *ngIf="data.status === CardStatus.Done; else deadline">
+        <p class="info__field">
+          Done:
+          <strong>{{ data.date_completion | date }}</strong>
+        </p>
+      </ng-container>
+      <ng-template #deadline>
+        <p class="info__field">
+          Deadline:
+          <strong>{{ data.date_deadline | date }}</strong>
+        </p>
+      </ng-template>
+
     </div>
   </mat-card-actions>
 

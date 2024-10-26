@@ -22,6 +22,10 @@
       <p class="field__title">Description:</p>
       <p class="description">{{ data.description }}</p>
     </div>
+    <div *ngIf="data.status !== CardStatus.ToDo" class="field">
+      <p class="field__title">Worker:</p>
+      <p class="creator">{{ data.worker }}</p>
+    </div>
     <div class="field">
       <p class="field__title">Creator:</p>
       <p class="creator">{{ data.creator }}</p>
@@ -33,6 +37,22 @@
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
+    <ng-container *ngIf="data.status === CardStatus.ToDo">
+      <button mat-flat-button mat-dialog-close (click)="todoCardsDataService.takeCard(data)">Take Up</button>
+    </ng-container>
+    <ng-container *ngIf="data.status === CardStatus.InProgress && data.worker === currentUser">
+      <button
+        mat-flat-button
+        mat-dialog-close
+        color="warn"
+        (click)="todoCardsDataService.refuseCard(data)"
+      >Refuse</button>
+      <button
+        mat-flat-button
+        mat-dialog-close
+        (click)="todoCardsDataService.completeCard(data)"
+      >Complete</button>
+    </ng-container>
   </mat-dialog-actions>
 }
 @else {

@@ -8,9 +8,9 @@
       <h2 class="column__title" style="color: var(--blue-color);">Todo</h2>
       <ng-container *ngIf="toDoCardsData$ | async as toDoCards; else noTodoTasks">
         <ng-container *ngIf="toDoCards.length > 0; else noTodoTasks">
-          <ng-container *ngFor="let card of toDoCards; trackBy: trackByCardId">
+          <div *ngFor="let card of toDoCards; trackBy: trackByCardId" style="width: 100%;">
             <todo-card [data]="card"></todo-card>
-          </ng-container>
+          </div>
         </ng-container>
       </ng-container>
       <ng-template #noTodoTasks>
@@ -22,7 +22,7 @@
       <h2 class="column__title" style="color: var(--yellow-color);">In Progress</h2>
       <ng-container *ngIf="inProgressCardsData$ | async as inProgressCards; else noInProgressTasks">
         <ng-container *ngIf="inProgressCards.length > 0; else noInProgressTasks">
-          <div *ngFor="let card of inProgressCards; trackBy: trackByCardId">
+          <div *ngFor="let card of inProgressCards; trackBy: trackByCardId" style="width: 100%;">
             <todo-card [data]="card"></todo-card>
           </div>
         </ng-container>
@@ -36,7 +36,7 @@
       <h2 class="column__title" style="color: var(--green-color);">Done</h2>
       <ng-container *ngIf="doneCardsData$ | async as doneCards; else noDoneTasks">
         <ng-container *ngIf="doneCards.length > 0; else noDoneTasks">
-          <div *ngFor="let card of doneCards; trackBy: trackByCardId">
+          <div *ngFor="let card of doneCards; trackBy: trackByCardId" style="width: 100%;">
             <todo-card [data]="card"></todo-card>
           </div>
         </ng-container>
