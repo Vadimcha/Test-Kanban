@@ -1,10 +1,12 @@
 # TestKanban
 
 
-| [![Video Preview](https://github.com/user-attachments/assets/0a564b65-2d10-49ea-8a0d-c8661a61c3c1)](https://github.com/user-attachments/assets/41b7a21a-c0f6-4782-b4a4-4b3968b9a570) | ![Image 1](https://github.com/user-attachments/assets/6b6f5f2f-bd0f-4cc5-b924-0adc11fce700) |
+| [![Video Preview](https://github.com/user-attachments/assets/0a564b65-2d10-49ea-8a0d-c8661a61c3c1)](https://github.com/user-attachments/assets/41b7a21a-c0f6-4782-b4a4-4b3968b9a570) <br> **Click to Play Video** | ![Image 1](https://github.com/user-attachments/assets/6b6f5f2f-bd0f-4cc5-b924-0adc11fce700) |
 |:--:|:--:|
-| ![Image 2](https://github.com/user-attachments/assets/0a564b65-2d10-49ea-8a0d-c8661a61c3c1) | ![Image 3](https://github.com/user-attachments/assets/464e79da-4b44-4c94-a7c3-ac34824ab247) |
-| ![Image 4](https://github.com/user-attachments/assets/16984b46-cf90-41c8-bb20-78f95e6fc5c3) | ![Image 5](https://github.com/user-attachments/assets/cdd4bd28-d270-4312-b2cf-4b6ddb6eb4eb) |
+| ![Image 2](https://github.com/user-attachments/assets/464e79da-4b44-4c94-a7c3-ac34824ab247) | ![Image 3](https://github.com/user-attachments/assets/16984b46-cf90-41c8-bb20-78f95e6fc5c3) |
+| ![Image 4](https://github.com/user-attachments/assets/cdd4bd28-d270-4312-b2cf-4b6ddb6eb4eb) | |
+
+
 
 
 
