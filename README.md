@@ -2,8 +2,7 @@
 
 ## Video
 
-[![Video Preview](https://github.com/user-attachments/assets/0a564b65-2d10-49ea-8a0d-c8661a61c3c1)](https://github.com/user-attachments/assets/41b7a21a-c0f6-4782-b4a4-4b3968b9a570)  
-**Click to Play Video**
+https://github.com/user-attachments/assets/0a564b65-2d10-49ea-8a0d-c8661a61c3c1)](https://github.com/user-attachments/assets/41b7a21a-c0f6-4782-b4a4-4b3968b9a570
 
 ## Images
 
