@@ -10,6 +10,7 @@ import {MatButton} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
 import {CardDescriptionPopupComponent} from '../../components/card-description-popup/card-description-popup.component';
 import {MakeTaskPopupComponent} from '../../components/make-task-popup/make-task-popup.component';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-kanban-page',
@@ -19,10 +20,11 @@ import {MakeTaskPopupComponent} from '../../components/make-task-popup/make-task
   styleUrls: ['./kanban-page.component.scss']
 })
 export class KanbanPageComponent {
-  username: string = localStorage.getItem("username") || "default";
+  public username: string = localStorage.getItem("username") || "default";
   readonly dialog = inject(MatDialog);
+  private readonly authService = inject(AuthService)
 
-  todoCardsDataService = inject(TodoCardsDataService);
+  private readonly todoCardsDataService = inject(TodoCardsDataService);
   toDoCardsData$: Observable<ITodoCard[]> = this.todoCardsDataService.todoCards$.pipe(
     map(cards => cards.filter(card => card.status === CardStatus.ToDo))
   );
@@ -39,5 +41,9 @@ export class KanbanPageComponent {
 
   openMakeTaskPopup() {
     this.dialog.open(MakeTaskPopupComponent);
+  }
+
+  quitAccount() {
+    this.authService.logout();
   }
 }

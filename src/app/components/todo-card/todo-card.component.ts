@@ -18,8 +18,8 @@ import {CardStatus} from '../../models/card-status';
 })
 export class TodoCardComponent {
   @Input() data!: ITodoCard;
-  readonly dialog = inject(MatDialog);
-  todoCardsDataService = inject(TodoCardsDataService)
+  private readonly dialog = inject(MatDialog);
+  private readonly todoCardsDataService = inject(TodoCardsDataService)
 
   openDescription() {
     this.dialog.open(CardDescriptionPopupComponent, {

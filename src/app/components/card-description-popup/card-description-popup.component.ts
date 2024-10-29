@@ -25,9 +25,9 @@ import {TodoCardsDataService} from '../../data/todo-cards-data.service';
 
 export class CardDescriptionPopupComponent {
   readonly data = inject<ITodoCard>(MAT_DIALOG_DATA);
-  currentUser = localStorage.getItem("username") || "default"
-  todoCardsDataService = inject(TodoCardsDataService)
-  edit_mod = true;
+  readonly currentUser = localStorage.getItem("username") || "default"
+  public todoCardsDataService = inject(TodoCardsDataService)
+  public edit_mod = true;
 
   constructor(private dialogRef: MatDialogRef<EditCardPopupComponent>) {}
 
@@ -35,7 +35,13 @@ export class CardDescriptionPopupComponent {
     this.edit_mod = !this.edit_mod;
   }
 
+  completeTask() {
+    this.todoCardsDataService.completeCard(this.data);
+  }
 
+  refuseTask() {
+    this.todoCardsDataService.refuseCard(this.data);
+  }
 
   protected readonly CardStatus = CardStatus;
   protected readonly localStorage = localStorage;

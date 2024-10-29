@@ -46,9 +46,9 @@ import {TodoCardsDataService} from '../../data/todo-cards-data.service';
 })
 export class EditCardPopupComponent {
   @Input() data!: ITodoCard;
-  minDate: Date;
-  form!: FormGroup;
-  todoCardsDataService = inject(TodoCardsDataService)
+  public readonly minDate: Date;
+  public form!: FormGroup;
+  private readonly todoCardsDataService = inject(TodoCardsDataService)
 
   constructor(private dialogRef: MatDialogRef<EditCardPopupComponent>) {
     this.minDate = new Date();

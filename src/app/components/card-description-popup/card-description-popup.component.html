@@ -45,12 +45,12 @@
         mat-flat-button
         mat-dialog-close
         color="warn"
-        (click)="todoCardsDataService.refuseCard(data)"
+        (click)="refuseTask()"
       >Refuse</button>
       <button
         mat-flat-button
         mat-dialog-close
-        (click)="todoCardsDataService.completeCard(data)"
+        (click)="completeTask()"
       >Complete</button>
     </ng-container>
   </mat-dialog-actions>

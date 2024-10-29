@@ -20,16 +20,14 @@ import {Router} from '@angular/router';
 export class LoginPageComponent {
   constructor(private router: Router) { }
 
-  authService = inject(AuthService)
-  form = new FormGroup({
+  private readonly authService = inject(AuthService)
+  public form = new FormGroup({
     username: new FormControl<string>("", { nonNullable: true }),
   })
   onSubmit() {
     if(this.form.valid) {
-      // @ts-ignore
-      this.authService.login(this.form.value);
-      this.router.navigate(['/kanban'])
-      console.log(this.form.value)
+      const loginData = this.form.getRawValue();
+      this.authService.login(loginData);
     }
   }
 }

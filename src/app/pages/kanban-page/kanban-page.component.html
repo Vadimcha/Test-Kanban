@@ -1,7 +1,10 @@
 <div class="wrapper">
   <div class="header">
-    <h2>Hello {{ username }}, this is your kanban</h2>
-    <button mat-flat-button (click)="openMakeTaskPopup()">Add new task</button>
+    <h3 class="title">Hello {{ username }}, this is your kanban</h3>
+    <div class="btn_group">
+      <button mat-flat-button color="warn" (click)="quitAccount()">Logout</button>
+      <button mat-flat-button (click)="openMakeTaskPopup()">Add new task</button>
+    </div>
   </div>
   <div class="grid">
     <div class="column">

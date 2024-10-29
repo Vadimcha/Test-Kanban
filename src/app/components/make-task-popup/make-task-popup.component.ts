@@ -38,9 +38,9 @@ import {TodoCardsDataService} from '../../data/todo-cards-data.service';
   styleUrl: './make-task-popup.component.scss'
 })
 export class MakeTaskPopupComponent {
-  minDate: Date;
-  form!: FormGroup;
-  todoCardsDataService = inject(TodoCardsDataService)
+  public readonly minDate: Date;
+  public form!: FormGroup;
+  private readonly todoCardsDataService = inject(TodoCardsDataService)
 
   constructor(private dialogRef: MatDialogRef<MakeTaskPopupComponent>) {
     this.minDate = new Date();
